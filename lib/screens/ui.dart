@@ -19,7 +19,7 @@ class _UIState extends State<UI> {
   double _currentPage = _initialPage;
   double _textPage = _initialPage;
 
-  void _coffeeScrollListener() {
+  void _planetScrollListener() {
     setState(() {
       _currentPage = _pagePlanetController.page;
     });
@@ -33,14 +33,14 @@ class _UIState extends State<UI> {
 
   @override
   void initState() {
-    _pagePlanetController.addListener(_coffeeScrollListener);
+    _pagePlanetController.addListener(_planetScrollListener);
     _pageTextController.addListener(_textScrollListener);
     super.initState();
   }
 
   @override
   void dispose() {
-    _pagePlanetController.removeListener(_coffeeScrollListener);
+    _pagePlanetController.removeListener(_planetScrollListener);
     _pageTextController.removeListener(_textScrollListener);
     _pageTextController.dispose();
     _pagePlanetController.dispose();
